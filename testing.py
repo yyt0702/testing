@@ -19,10 +19,9 @@ print("backing ratio: " , br.json())
 print("deficit: ", df.json())
 
 
-
-
-
 url = "https://api.vires.finance/state"
 res = requests.get(url).json() 
-df = pd.DataFrame(res)
-df.to_csv("vires.csv")
+market = res['markets']
+market_ = pd.DataFrame(market)
+print(market_)
+
